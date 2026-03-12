@@ -4,7 +4,7 @@ PRODUCT_ID = "4034"
 COLOR = "R107_P01"
 SIZE = "L"
 
-BOT_TOKEN = "DEIN_TELEGRAM_TOKEN"
+BOT_TOKEN = "8703701255:AAHP0yakwBDuOEtU-LzzxUASkY_nHX194QY"
 CHAT_ID = "402782250"
 
 url = f"https://www.canyon.com/on/demandware.store/Sites-RoW-Site/en/Product-Variation?pid={PRODUCT_ID}"
