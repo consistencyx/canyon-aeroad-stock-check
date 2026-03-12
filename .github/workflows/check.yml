@@ -1,8 +1,7 @@
 name: canyon-stock-check
 
-on: 
-  schedule:
-    - cron: "*/5 * * * *"
+on:
+  workflow_dispatch:
 
 jobs:
   check:
@@ -10,5 +9,14 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-python@v4
+        with:
+          python-version: "3.11"
+
       - run: pip install requests
-      - run: python canyon_check.py
+
+      - run: |
+          while true
+          do
+            python canyon_check.py
+            sleep 120
+          done
