@@ -7,6 +7,8 @@ COLOR = "R107_P01"
 BOT_TOKEN = "8703701255:AAHP0yakwBDuOEtU-LzzxUASkY_nHX194QY"
 CHAT_ID = "402782250"
 
+BUY_LINK = "https://www.canyon.com/de-de/rennrad/aero-rennrad/aeroad/cf-slx/aeroad-cf-slx-7-di2/4034.html?dwvar_4034_pv_rahmenfarbe=R107_P01&dwvar_4034_pv_rahmengroesse=L"
+
 url = f"https://www.canyon.com/on/demandware.store/Sites-RoW-Site/en/Product-Variation?pid={PRODUCT_ID}"
 
 available = False
@@ -36,17 +38,21 @@ try:
         available = True
 
 except Exception as e:
-    message = f"Canyon Check Fehler: {e}"
+    print("API Fehler:", e)
 
 if available:
-    message = "Aeroad CF SLX 7 Di2 Weiß Größe L: VERFÜGBAR"
-else:
-    message = "Aeroad CF SLX 7 Di2 Weiß Größe L: NICHT verfügbar"
+    message = f"""🚨 AEROAD RESTOCK 🚨
 
-requests.get(
-    f"https://api.telegram.org/bot{BOT_TOKEN}/sendMessage",
-    params={
-        "chat_id": CHAT_ID,
-        "text": message
-    }
-)
+Aeroad CF SLX 7 Di2 Weiß Größe L ist verfügbar!
+
+Direkt kaufen:
+{BUY_LINK}
+"""
+
+    requests.get(
+        f"https://api.telegram.org/bot{BOT_TOKEN}/sendMessage",
+        params={
+            "chat_id": CHAT_ID,
+            "text": message
+        }
+    )
