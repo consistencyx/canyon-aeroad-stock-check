@@ -1,6 +1,7 @@
 name: canyon-stock-check
 
-on:
+on: 
+  workflow_dispatch: 
   schedule:
     - cron: "*/5 * * * *"
 
