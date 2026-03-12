@@ -28,3 +28,10 @@ if size_available:
             "text": "Aeroad CF SLX 7 Di2 weiß Größe L verfügbar"
         }
     )
+requests.get(
+    f"https://api.telegram.org/bot{BOT_TOKEN}/sendMessage",
+    params={
+        "chat_id": CHAT_ID,
+        "text": "Testnachricht GitHub Script läuft"
+    }
+)
